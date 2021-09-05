@@ -29,9 +29,15 @@ export default function LoginScreen() {
         </div>
         <button
           className="form__auth__cta"
-          onClick={() => history.push("/dashboard")}
+          onClick={() => history.push("/home")}
         >
           Login
+        </button>
+        <button
+          className="form__auth__cta"
+          // onClick={() => history.push("/home")}
+        >
+          Login with google
         </button>
         <div className="form__auth__text">
           Don't have an account?

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import HomeScreen from "../Screens/HomeScreen";
 import LoginScreen from "../Screens/LoginScreen";
 import RegisterScreen from "../Screens/RegisterScreen";
 
@@ -9,6 +10,7 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={LoginScreen} />
         <Route path="/register" exact component={RegisterScreen} />
+        <Route path="/home" exact component={HomeScreen} />
       </Switch>
     </BrowserRouter>
   );

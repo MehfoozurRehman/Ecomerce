@@ -41,6 +41,12 @@ export default function RegisterScreen() {
         <button className="form__auth__cta" onClick={() => history.push("/")}>
           Register
         </button>
+        <button
+          className="form__auth__cta"
+          // onClick={() => history.push("/home")}
+        >
+          Login with google
+        </button>
         <div className="form__auth__text">
           Already have an account?
           <Link to="/" className="form__auth__link">
