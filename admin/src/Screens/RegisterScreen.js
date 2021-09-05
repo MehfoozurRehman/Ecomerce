@@ -26,12 +26,12 @@ export default function RegisterScreen() {
         />
         <div className="form__auth__checkbox">
           <input
-            class="styled-checkbox"
+            className="styled-checkbox"
             id="styled-checkbox-2"
             type="checkbox"
             value="value1"
           />
-          <label for="styled-checkbox-2">
+          <label htmlFor="styled-checkbox-2">
             I Agree to
             <Link to="/terms_conditions" className="form__auth__link">
               Terms & conditions

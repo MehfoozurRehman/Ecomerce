@@ -20,12 +20,12 @@ export default function LoginScreen() {
         />
         <div className="form__auth__checkbox">
           <input
-            class="styled-checkbox"
+            className="styled-checkbox"
             id="styled-checkbox-1"
             type="checkbox"
             value="value1"
           />
-          <label for="styled-checkbox-1">Remember Me</label>
+          <label htmlFor="styled-checkbox-1">Remember Me</label>
         </div>
         <button
           className="form__auth__cta"
