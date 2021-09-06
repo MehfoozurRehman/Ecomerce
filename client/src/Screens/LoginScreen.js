@@ -9,35 +9,28 @@ export default function LoginScreen() {
   const [error, setError] = useState("");
   const [remember, setRemember] = useState(false);
   const history = useHistory();
-  const [user, setUser] = useState([]);
 
   async function handleLogin(e) {
     e.preventDefault();
-    axios
-      .post("/api/v1/login", {
-        email: email,
-        password: password,
-      })
+    await axios
+      .post("/api/user/login", { email: email, password: password })
       .then((res) => {
-        setUser(res.data);
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        localStorage.setItem("userToken", JSON.stringify(res.data.token));
       });
-    if (remember) {
-      localStorage.setItem("userFromJWT", JSON.stringify(user));
-    }
-
     history.push("/");
   }
-  function googleSuccess(res) {
-    const result = res?.profileObj;
-    const token = res?.tokenId;
+  // function googleSuccess(res) {
+  //   const result = res?.profileObj;
+  //   const token = res?.tokenId;
 
-    localStorage.setItem("userFormGoogle", JSON.stringify(result, token));
-    // console.log(JSON.parse(localStorage.getItem("userFromGoogle")));
-    history.push("/");
-  }
-  function googleFailure() {
-    console.log("fail to login");
-  }
+  //   localStorage.setItem("userFormGoogle", JSON.stringify(result, token));
+  //   // console.log(JSON.parse(localStorage.getItem("userFromGoogle")));
+  //   history.push("/");
+  // }
+  // function googleFailure() {
+  //   console.log("fail to login");
+  // }
   return (
     <div className="container__auth">
       <form className="form__auth" onSubmit={handleLogin}>
@@ -46,6 +39,7 @@ export default function LoginScreen() {
         <input
           type="email"
           placeholder="Email Address"
+          name="email"
           className="form__auth__input"
           required
           autoFocus
@@ -56,6 +50,7 @@ export default function LoginScreen() {
         <input
           type="password"
           placeholder="Password"
+          name="password"
           className="form__auth__input"
           required
           onChange={(e) => {

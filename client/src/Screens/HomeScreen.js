@@ -5,7 +5,7 @@ import { LogIn, LogOut, ShoppingCart } from "react-feather";
 function Header({ user, setUser }) {
   return (
     <header className="header">
-      <div className="header__logo">Company logo</div>
+      <div className="header__logo">Ecomerce store</div>
       <div className="header__buttons">
         {user ? (
           <>
@@ -15,12 +15,12 @@ function Header({ user, setUser }) {
                 alt="userPic"
                 className="header__user__info__img"
               />
-              <div className="header__user__info__name">Mehfooz</div>
+              <div className="header__user__info__name">{user.name}</div>
             </div>
             <button
               onClick={() => {
+                setUser(null);
                 localStorage.clear();
-                setUser(false);
               }}
               className="header__cta"
             >
@@ -57,6 +57,13 @@ function Header({ user, setUser }) {
 
 export default function HomeScreen() {
   const [user, setUser] = useState(null);
+  const [userToken, setUserToken] = useState(null);
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")));
+    setUserToken(JSON.parse(localStorage.getItem("userToken")));
+  }, []);
+  // console.log(JSON.parse(localStorage.getItem("user")));
+  // console.log(JSON.parse(localStorage.getItem("userToken")));
 
   return (
     <div className="container">

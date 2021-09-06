@@ -11,18 +11,19 @@ export default function RegisterScreen() {
   const [agreeTerms, setAgreeTerms] = useState(false);
   const history = useHistory();
 
-  function handleRegister(e) {
+  async function handleRegister(e) {
     e.preventDefault();
-    axios
-      .post("/api/v1/signup", {
-        name: name,
-        email: email,
-        password: password,
-        confirmPassword: confirmPassword,
-      })
-      .then((res) => {
-        console.log(res.data);
-      });
+    if (password === confirmPassword) {
+      await axios
+        .post("/api/user/register", {
+          name: name,
+          email: email,
+          password: password,
+        })
+        .then((res) => {
+          console.log(res.data);
+        });
+    }
     history.push("/login");
   }
 
@@ -34,6 +35,7 @@ export default function RegisterScreen() {
         <input
           type="text"
           placeholder="Name"
+          name="name"
           className="form__auth__input"
           required
           autoFocus
@@ -44,6 +46,7 @@ export default function RegisterScreen() {
         <input
           type="email"
           placeholder="Email Address"
+          name="email"
           className="form__auth__input"
           required
           onChange={(e) => {
@@ -53,6 +56,7 @@ export default function RegisterScreen() {
         <input
           type="password"
           placeholder="Password"
+          name="password"
           className="form__auth__input"
           required
           onChange={(e) => {
@@ -61,6 +65,7 @@ export default function RegisterScreen() {
         />
         <input
           type="password"
+          name="confirmPassword"
           placeholder="Confirm Password"
           className="form__auth__input"
           required

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomeScreen from "./Screens/HomeScreen";
@@ -11,9 +11,13 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/login" exact component={LoginScreen} />
-          <Route path="/register" exact component={RegisterScreen} />
-          <Route path="/" exact component={HomeScreen} />
+          <Route path="/" exact>
+            <HomeScreen />
+          </Route>
+          <Route path="/login">
+            <LoginScreen />
+          </Route>
+          <Route path="/register" component={RegisterScreen} />
         </Switch>
       </BrowserRouter>
     </div>
