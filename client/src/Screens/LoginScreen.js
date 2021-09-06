@@ -82,7 +82,7 @@ export default function LoginScreen() {
         <button type="submit" className="form__auth__cta">
           Login
         </button>
-        <GoogleLogin
+        {/* <GoogleLogin
           clientId="355043348426-hrlofmacs3ph0qhhis03u08h5lbcvkd7.apps.googleusercontent.com"
           render={(renderProps) => (
             <button
@@ -97,7 +97,7 @@ export default function LoginScreen() {
           onSuccess={googleSuccess}
           onFailure={googleFailure}
           cookiePolicy="single_host_origin"
-        />
+        /> */}
         <div className="form__auth__text">
           Don't have an account?
           <Link to="/register" className="form__auth__link">

@@ -5,7 +5,7 @@
   "scripts": {
     "client": "cd client && yarn start",
     "admin": "cd admin && yarn start",
-    "backend": "cd backend && nodemon server.js"
+    "backend": "cd backend && npm run start"
   },
   "repository": {
     "type": "git",

@@ -57,17 +57,6 @@ function Header({ user, setUser }) {
 
 export default function HomeScreen() {
   const [user, setUser] = useState(null);
-  useEffect(() => {
-    if (JSON.parse(localStorage.getItem("userFromJWT"))) {
-      setUser(JSON.parse(localStorage.getItem("userFromJWT")));
-    } else {
-      setUser(null);
-    }
-    // else if (JSON.parse(localStorage.getItem("userFromGoogle"))) {
-    //   setUser(JSON.parse(localStorage.getItem("userFromGoogle")));
-    // }
-  }, []);
-  console.log(user);
 
   return (
     <div className="container">
