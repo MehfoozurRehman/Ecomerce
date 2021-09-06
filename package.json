@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/MehfoozurRehman/ecomerce-mern/issues"
   },
-  "homepage": "https://github.com/MehfoozurRehman/ecomerce-mern#readme"
+  "homepage": "https://github.com/MehfoozurRehman/ecomerce-mern#readme",
+  "dependencies": {
+    "react-rating-stars-component": "^2.2.0"
+  }
 }
