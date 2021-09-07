@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MapPin,
   Phone,
@@ -10,9 +10,51 @@ import {
   Globe,
   User,
   ShoppingCart,
+  X,
 } from "react-feather";
 
+function SearchPanel() {
+  return (
+    <div className="panel__wrapper">
+      <div className="panel__side__bar">
+        <div className="panel__side__bar__header">
+          <div className="panel__side__bar__header__heading">Search</div>
+          <button className="panel__side__bar__header__button">
+            <X size={18} color="currentColor" />
+          </button>
+        </div>
+        <div className="panel__side__bar__content search__panel">
+          <form action="" className="search__panel__form">
+            <select name="" id="" className="search__panel__catagory__selector">
+              <option value="">All Catagory</option>
+              <option value="">Women</option>
+              <option value="">Men</option>
+              <option value="">Beauty</option>
+              <option value="">Accessories</option>
+            </select>
+
+            <div className="search__panel__input__box">
+              <input
+                type="text"
+                placeholder="What are you looking for?"
+                className="search__panel__input__field"
+              />
+              <button className="search__panel__input__button">
+                <Search size={18} color="currentColor" />
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Header() {
+  const [searchPanel, setSearchPanel] = useState(true);
+  const [languagePanel, setLanguagePanel] = useState(false);
+  const [authPanel, setAuthPanel] = useState(false);
+  const [cartPanel, setCartPanel] = useState(false);
   return (
     <header className="header">
       <div className="header__top__bar">
@@ -85,6 +127,10 @@ export default function Header() {
           </button>
         </div>
       </div>
+      {searchPanel ? <SearchPanel /> : null}
+      {languagePanel ? <SearchPanel /> : null}
+      {authPanel ? <SearchPanel /> : null}
+      {cartPanel ? <SearchPanel /> : null}
     </header>
   );
 }
