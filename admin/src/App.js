@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
-import Routes from "./Router/Routes";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import HomeScreen from "./Screens/HomeScreen";
+import LoginScreen from "./Screens/LoginScreen";
+import RegisterScreen from "./Screens/RegisterScreen";
+import axios from "./axios";
 
 export default function App() {
   return (
     <div className="App">
-      <Routes />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <HomeScreen />
+          </Route>
+          <Route path="/login">
+            <LoginScreen />
+          </Route>
+          <Route path="/register" component={RegisterScreen} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
