@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      react-rating-stars-component:
+        specifier: ^2.2.3
+        version: 2.2.3
+
+packages:
+
+  react-rating-stars-component@2.2.3:
+    resolution: {integrity: sha512-cnvwJj7TvH2RDGUK53g+C25DHptfYGni7buwM1CNd+QjpestK6DMjP276jtEANDJPT8BVF+JB6mGxhqp2O6t5g==}
+
+snapshots:
+
+  react-rating-stars-component@2.2.3: {}

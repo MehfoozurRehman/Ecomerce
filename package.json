@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/MehfoozurRehman/ecomerce-mern#readme",
   "dependencies": {
-    "react-rating-stars-component": "^2.2.0"
+    "react-rating-stars-component": "^2.2.3"
   }
 }
