@@ -4,4 +4,6 @@ node_modules
 !.env.example
 *serviceAccountKey*.json
 *firebase-admin*.json
-config.bat
+
+.env*
+!.env.example
